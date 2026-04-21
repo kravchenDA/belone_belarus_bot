@@ -21,7 +21,7 @@ dp.include_router(router)
 
 # URL вебхука (Render даст вам адрес вида https://ваш-бот.onrender.com)
 # Эту переменную нужно добавить в Environment Variables на Render
-WEBHOOK_URL = "https://your-app-name.onrender.com"  # <-- ЗАМЕНИТЕ на ваш реальный адрес!
+WEBHOOK_URL = "87d0ad8b933bb8fa239cb7f2cc09da1c"  # <-- ЗАМЕНИТЕ на ваш реальный адрес!
 WEBHOOK_PATH = "/webhook"  # Путь, по которому Telegram будет стучаться
 
 
