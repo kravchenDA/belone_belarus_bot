@@ -14,7 +14,8 @@ dp.include_router(router)
 
 async def main():
     init_db()
-    await bot.delete_webhook()  # Удаляем вебхук на всякий случай
+    await bot.delete_webhook()  # Удаляем вебхук на случай, если был
+    print("🚀 Бот BelONE запущен!")
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
