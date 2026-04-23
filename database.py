@@ -3,13 +3,11 @@ from datetime import datetime
 
 DB_PATH = "belone.db"
 
-
 def init_db():
     """Создаёт таблицы при запуске"""
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
 
-    # Таблица пользователей
     cur.execute("""
         CREATE TABLE IF NOT EXISTS users (
             user_id INTEGER PRIMARY KEY,
@@ -20,7 +18,6 @@ def init_db():
         )
     """)
 
-    # Таблица результатов подбора вкуса
     cur.execute("""
         CREATE TABLE IF NOT EXISTS taste_results (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -34,7 +31,6 @@ def init_db():
     conn.commit()
     conn.close()
 
-
 def register_user(user_id: int, username: str = None, first_name: str = None):
     """Регистрирует нового пользователя"""
     conn = sqlite3.connect(DB_PATH)
@@ -45,7 +41,6 @@ def register_user(user_id: int, username: str = None, first_name: str = None):
     """, (user_id, username, first_name))
     conn.commit()
     conn.close()
-
 
 def save_taste_result(user_id: int, taste: str, answers: str):
     """Сохраняет результат подбора вкуса"""
@@ -60,7 +55,6 @@ def save_taste_result(user_id: int, taste: str, answers: str):
     """, (user_id, taste, answers))
     conn.commit()
     conn.close()
-
 
 def get_user(user_id: int):
     """Получает пользователя по ID"""
